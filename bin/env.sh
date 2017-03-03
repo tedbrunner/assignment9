@@ -5,7 +5,7 @@ export DOCKER_REPO=tedbrunner
 export DOCKER_IMAGE=homeless-service
 #export DOCKER_IMAGE=django-web
 export PROJ_SETTINGS_DIR=homelessAPI
-#export DEPLOY_TARGET=LOCAL
+#export DEPLOY_TARGET=local
 export DEPLOY_TARGET=integration
 
 echo "##############################"
