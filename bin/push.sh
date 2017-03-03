@@ -2,6 +2,8 @@
 # Tag, Push and Deploy only if it's not a pull request
 # Comment
 if [ "$TRAVIS_BRANCH" == "master" ]; then
+    echo "travis master"
+    
     docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
     if [ $? -eq 0 ]; then
 	echo "docker logged in"
