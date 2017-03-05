@@ -8,14 +8,14 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     if [ $? -eq 0 ]; then
 	echo "docker logged in"
     else
-	echo "docker logged in failed"
+	echo "docker login $DOCKER_USERNAME failed"
     fi
     
     docker push "$DOCKER_REPO"/"$DOCKER_IMAGE":latest
     if [ $? -eq 0 ]; then
 	echo "docker pushed repo"
     else
-	echo "docker push failed"
+	echo "docker push $DOCKER_REPO / $DOCKER_IMAGE failed"
     fi
 
     ./bin/ecs-deploy.sh \
