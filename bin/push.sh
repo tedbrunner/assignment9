@@ -7,11 +7,15 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
     if [ $? -eq 0 ]; then
 	echo "docker logged in"
+    else
+	echo "docker logged in failed"
     fi
     
     docker push "$DOCKER_REPO"/"$DOCKER_IMAGE":latest
     if [ $? -eq 0 ]; then
 	echo "docker pushed repo"
+    else
+	echo "docker push failed"
     fi
 
     ./bin/ecs-deploy.sh \
@@ -21,6 +25,8 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
 
     if [ $? -eq 0 ]; then
 	echo "ecs-deploy"
+    else
+	echo "ecs-deploy failed"
     fi
 
 fi
