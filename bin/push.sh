@@ -15,7 +15,7 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     if [ $? -eq 0 ]; then
 	echo "docker pushed repo"
     else
-	echo "docker push $DOCKER_REPO / $DOCKER_IMAGE failed"
+	echo "docker push ($DOCKER_REPO) ($DOCKER_IMAGE) failed"
     fi
 
     ./bin/ecs-deploy.sh \
