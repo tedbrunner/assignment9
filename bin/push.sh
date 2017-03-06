@@ -26,7 +26,7 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
     if [ $? -eq 0 ]; then
 	echo "ecs-deploy"
     else
-	echo "ecs-deploy failed"
+	echo "ecs-deploy $ECS_SERVICE_NAME $ECS_CLUSTER_NAME failed"
     fi
 
 fi
